@@ -1,0 +1,17 @@
+class Fibonacci:
+   def __init__(self, end: int):
+       self.prev = 0
+       self.cur = 1
+       self.end = end
+
+   def count(self):
+       fib_list = []
+
+       while self.end > self.cur:
+           fib_list.append(self.cur)
+           self.cur = self.prev + self.cur
+           self.prev = fib_list[-1]
+
+       return fib_list
+
+print(Fibonacci(20).count()) # 20 - is an example. there could be any parameter value
